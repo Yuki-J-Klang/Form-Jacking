@@ -13,11 +13,12 @@ function  App() {
   const [isValid, setIsValid] = useState(true);
 
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     await fetch("//localhost:3001/sign_up", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json"},
       body: JSON.stringify({ email, password }),
     })
       .then((response) => response.json())
@@ -42,6 +43,7 @@ function  App() {
     const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/;
     setIsValid(emailPattern.test(email));
   };
+
 
 
   return (
